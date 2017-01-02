@@ -30,13 +30,15 @@
       $l.ajax({
         method: "GET",
         url:  "http://api.openweathermap.org/data/2.5/weather?id=5128638&APPID=5d556f4432d9598e2a9ee12aa2530502",
-        success(data) {
+        success (data) => {
           const node = document.createElement("p");
           $l(node).append(data.currentTarget.responseText);
           $l('li').append(node);
           console.log(data);
-        }
-      })
+        },
+        error (message) => {
+          console.log(message);
+        }})
     });
   </script>
 
