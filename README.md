@@ -1,3 +1,5 @@
+DOMinatr is a custom tool designed to be a lightweight solution to standardizing DOM manipulation across browsers
+
 
 | [Public API](#public-api) |
 
