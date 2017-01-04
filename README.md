@@ -15,24 +15,25 @@
 - [remove()](#remove)
 - [on()](#oneventtype-callback)
 - [off()](#offeventtype)
+- [ajax](#ajax)
 
-## $d (selector)
-### Creates and returns a DOMiNodes Object
+## $l (selector)
+### Creates and returns a DOMinatr Object
 
 Selecting DOM Elements
 ```javascript
-$d("div.class");
+$l("div.class");
 ```
 Wrapping HTML Elements
 ```javascript
 const newDiv = document.createElement("div");
-$d(newDiv)
+$l(newDiv)
 ```
 Queue callbacks to run when DOM Content has finished loading
 ```javascript
-$d(() => alert("content has loaded!"));
+$l(() => alert("content has loaded!"));
 ```
-## DOMiNodes Methods
+## DOMinatr Methods
 
 ### html(string)
 Sets the inner HTML of all selected elements
@@ -41,7 +42,7 @@ Sets the inner HTML of all selected elements
 ```
 :arrow_down:
 ```javascript
-$d("p.paragraph").html("hello world");
+$l("p.paragraph").html("hello world");
 ```
 :arrow_down:
 ```html
@@ -53,7 +54,7 @@ Returns the inner HTML of the first element in a collection
 ```
 :arrow_down:
 ```javascript
-$d("p.paragraph").html("hello world");
+$l("p.paragraph").html("hello world");
 //-> "hello world"
 ```
 ### empty()
@@ -66,7 +67,7 @@ Deletes all child elements of the collection elements
 ```
 :arrow_down:
 ```javascript
-$d("ul.emptyMe").empty();
+$l("ul.emptyMe").empty();
 ```
 :arrow_down:
 ```html
@@ -83,9 +84,9 @@ Gets value of attribute for first Element in colllection OR sets value for attri
 ```
 :arrow_down:
 ```javascript
-$d("img").attr("alt");
+$l("img").attr("alt");
 //-> "hello"
-$d("img").attr("alt", "goodbye");
+$l("img").attr("alt", "goodbye");
 ```
 :arrow_down:
 ```html
@@ -101,7 +102,7 @@ Adds a class name to every element in the collection
 ```
 :arrow_down:
 ```javascript
-$d("div.hello").addClass("world");
+$l("div.hello").addClass("world");
 ```
 :arrow_down:
 ```html
@@ -116,7 +117,7 @@ Removes a class name from every element in the collection
 ```
 :arrow_down:
 ```javascript
-$d("div.hello").removeClass("hello");
+$l("div.hello").removeClass("hello");
 ```
 :arrow_down:
 ```html
@@ -132,7 +133,7 @@ Appends content to every element of the collection in accordance to type of inpu
 ```
 :arrow_down:
 ```javascript
-$d("p").append("hello");
+$l("p").append("hello");
 ```
 :arrow_down:
 ```html
@@ -142,7 +143,7 @@ $d("p").append("hello");
 ```
 :arrow_down:
 ```javascript
-$d("p").append(document.createElement("div"));
+$l("p").append(document.createElement("div"));
 ```
 :arrow_down:
 ```html
@@ -160,7 +161,7 @@ Returns a new collection containing the child elements of the elements in the or
 ```
 :arrow_down:
 ```javascript
-$d("ul").children();
+$l("ul").children();
 //<li></li>
 //<li></li>
 ```
@@ -172,7 +173,7 @@ $d("ul").children();
 ```
 :arrow_down:
 ```javascript
-$d("p").parent();
+$l("p").parent();
 //<div></div>
 ```
 ### find(selector)
@@ -186,7 +187,7 @@ Searches all elements in the collection for children that match the input select
 ```
 :arrow_down:
 ```javascript
-$d("div").find("aside.side");
+$l("div").find("aside.side");
 //<aside class="side"></aside>
 ```
 ### remove()
@@ -199,7 +200,7 @@ Removes all elements of the collection from the DOM and empties the collection.
 ```
 :arrow_down:
 ```javascript
-$d("div").remove();
+$l("div").remove();
 ```
 :arrow_down:
 ```html
@@ -207,14 +208,33 @@ $d("div").remove();
 ### on(eventType, callback)
 Adds an event listener with the given type and callback to all elements of the collection
 ```javascript
-$d("button.hello").on("click", () => alert("hello"));
+$l("button.hello").on("click", () => alert("hello"));
 ```
 ### off(eventType)
 Removes the event listeners for a given type from all elements of the collection
 ```javascript
-$d("button.hello").off("click");
+$l("button.hello").off("click");
 ```
 
-# Todos
-- expand beta AJAX functionality
-- create live demo
+### $.ajax(options)
+Creates an HTTP request object based on options inputs, then runs the success or error Methods
+```javascript
+defaults = {
+  method: "GET",
+  dataType: "json",
+  processData: true,
+  StatusCode: {},
+  url: document.URL,
+  async: true,
+  cache: true,
+  contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+  crossDomain: false,
+  global: true,
+  headers: {},
+  ifModified: false,
+  isLocal: true,
+  data: {},
+  success: () => {},
+  error: () => {},
+};
+```
