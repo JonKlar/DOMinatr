@@ -1,5 +1,5 @@
 
-| [Public API](#public-api) | [Todos](#todos) |
+| [Public API](#public-api) |
 
 # Public API
 - [selector()](#d-selector)
@@ -40,11 +40,11 @@ Sets the inner HTML of all selected elements
 ```html
 <p class="paragraph"></p>
 ```
-:arrow_down:
+
 ```javascript
 $l("p.paragraph").html("hello world");
 ```
-:arrow_down:
+
 ```html
 <p class="paragraph">hello world</p>
 ```
@@ -52,7 +52,7 @@ Returns the inner HTML of the first element in a collection
 ```html
 <p class="paragraph">hello world</p>
 ```
-:arrow_down:
+
 ```javascript
 $l("p.paragraph").html("hello world");
 //-> "hello world"
@@ -65,11 +65,11 @@ Deletes all child elements of the collection elements
   <li>World</li>
 </ul>
 ```
-:arrow_down:
+
 ```javascript
 $l("ul.emptyMe").empty();
 ```
-:arrow_down:
+
 ```html
 <ul class="emptyMe">
 </ul>
@@ -82,13 +82,13 @@ Gets value of attribute for first Element in colllection OR sets value for attri
 <img src="" alt="">
 <img src="" alt="">
 ```
-:arrow_down:
+
 ```javascript
 $l("img").attr("alt");
 //-> "hello"
 $l("img").attr("alt", "goodbye");
 ```
-:arrow_down:
+
 ```html
 <img src="" alt="goodbye">
 <img src="" alt="goodbye">
@@ -100,11 +100,11 @@ Adds a class name to every element in the collection
 <div class="hello"></div>
 <div class="hello"></div>
 ```
-:arrow_down:
+
 ```javascript
 $l("div.hello").addClass("world");
 ```
-:arrow_down:
+
 ```html
 <div class="hello world"></div>
 <div class="hello world"></div>
@@ -115,11 +115,11 @@ Removes a class name from every element in the collection
 <div class="hello world"></div>
 <div class="hello world"></div>
 ```
-:arrow_down:
+
 ```javascript
 $l("div.hello").removeClass("hello");
 ```
-:arrow_down:
+
 ```html
 <div class="world"></div>
 <div class="world"></div>
@@ -131,21 +131,21 @@ Appends content to every element of the collection in accordance to type of inpu
 <p></p>
 <p></p>
 ```
-:arrow_down:
+
 ```javascript
 $l("p").append("hello");
 ```
-:arrow_down:
+
 ```html
 <p>hello</p>
 <p>hello</p>
 <p>hello</p>
 ```
-:arrow_down:
+
 ```javascript
 $l("p").append(document.createElement("div"));
 ```
-:arrow_down:
+
 ```html
 <p>hello<div></div></p>
 <p>hello<div></div></p>
@@ -159,7 +159,7 @@ Returns a new collection containing the child elements of the elements in the or
   <li></li>
 </ul>
 ```
-:arrow_down:
+
 ```javascript
 $l("ul").children();
 //<li></li>
@@ -171,7 +171,7 @@ $l("ul").children();
   <p></p>
 </div>
 ```
-:arrow_down:
+
 ```javascript
 $l("p").parent();
 //<div></div>
@@ -185,7 +185,7 @@ Searches all elements in the collection for children that match the input select
   <aside class="side"></aside>
 </div>
 ```
-:arrow_down:
+
 ```javascript
 $l("div").find("aside.side");
 //<aside class="side"></aside>
@@ -198,11 +198,11 @@ Removes all elements of the collection from the DOM and empties the collection.
   <section></section>
 </div>
 ```
-:arrow_down:
+
 ```javascript
 $l("div").remove();
 ```
-:arrow_down:
+
 ```html
 ```
 ### on(eventType, callback)
